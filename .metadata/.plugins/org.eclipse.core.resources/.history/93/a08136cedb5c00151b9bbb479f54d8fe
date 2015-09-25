@@ -1,0 +1,17 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main () {
+/*
+ * Question: Given two strings, write a method to determine if one is a permutation of the other
+ *
+ * Solution: With i = [0] and j = [str.length()], check if i == j then increment i and decrement j
+ * 			 If i != j for any index, then the two strings are not a permutation of the other
+ *
+ * Complexity: O(n) due to the single while loop
+ */
+
+
+}

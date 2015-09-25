@@ -1,0 +1,18 @@
+#include <iostream>
+#include <stdio.h>
+#include <list>
+
+using namespace std;
+
+int main () {
+/*
+ * Question: Write code to remove duplicates from an unsorted linked list.
+ *
+ * Solution:
+ *
+ * Complexity:
+ */
+
+
+
+}
