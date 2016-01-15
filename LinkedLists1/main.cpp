@@ -18,6 +18,8 @@ int main () {
 	 * 			 also be used.
 	 * 			 List elements are populated randomly for fun. :)
 	 *
+	 * Note:	 Solution requires C++11 to compile (auto in iterator). C++11 flag: -std=c++0x.
+	 *
 	 * Complexity: O(n) for iterating once.
 	 */
 
