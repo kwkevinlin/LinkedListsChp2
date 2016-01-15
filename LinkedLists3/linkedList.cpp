@@ -16,16 +16,22 @@ Node::Node(int i) {
 }
 
 List::List() {
-	first = NULL;
+	head = NULL;
 }
 
 void List::push_back(int data) {
 	Node* newNode = new Node(data);
 
-	if (first == NULL) {
-		first = newNode;
-	} else {
-		first->Node.next = newNode;
+	if (head == NULL) { //New list, set head = newly created node with data
+		head = newNode;
+	} else { //Find last node and change next = newNode
+		Node* itr = head;
+		while(itr != NULL) { //While there are still nodes
+			if (itr->next == NULL)
+				itr->next = newNode;
+			else
+				itr = itr->next; //Increment itr to next node
+		}
 	}
 }
 

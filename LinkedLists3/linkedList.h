@@ -24,7 +24,7 @@ class List {
 		void push_back(int);
 		void deleteMiddle(Node*);
 	private:
-		Node* first;
+		Node* head;
 };
 
 #endif /* LINKEDLIST_H_ */
