@@ -20,5 +20,11 @@ int main () {
 	 *
 	 */
 
+	List list;
+	list.push_back(5);
+	list.push_back(3);
+
+	cout << "PrintData" << endl;
+	list.printData();
 
 }

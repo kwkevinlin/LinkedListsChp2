@@ -10,8 +10,6 @@ struct Node {
 
 		Node();
 		Node(int);
-//		int getData() { return data; };
-//		void setNext(Node* newNode) { next = newNode; };
 
 		int data;
 		Node* next;
@@ -21,8 +19,10 @@ class List {
 
 	public:
 		List();
+		Node* getHead() {return head;};
 		void push_back(int);
 		void deleteMiddle(Node*);
+		void printData();
 	private:
 		Node* head;
 };

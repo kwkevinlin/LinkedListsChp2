@@ -2,8 +2,9 @@
  * Node and List class defined together in linkedList.cpp for simplicity.
  */
 
-#include "linkedList.h"
 #include <stdlib.h>
+#include <iostream>
+#include "linkedList.h"
 
 Node::Node() {
 	data = -1;
@@ -27,14 +28,27 @@ void List::push_back(int data) {
 	} else { //Find last node and change next = newNode
 		Node* itr = head;
 		while(itr != NULL) { //While there are still nodes
-			if (itr->next == NULL)
+			if (itr->next == NULL) {
 				itr->next = newNode;
-			else
+				break; //Why do I need this, is else statement's itr=itr->next not working?
+			}
+			else {
+				std::cout << "Going to next: " << itr->next->data << "\n";
 				itr = itr->next; //Increment itr to next node
+			}
 		}
 	}
 }
 
 void List::deleteMiddle(Node*) {
 
+}
+
+/* printData(2) = returns 2nd element in list */
+void List::printData() {
+	Node* itr = head;
+	while (itr != NULL) {
+		std::cout << itr->data << std::endl;
+		itr = itr->next;
+	}
 }
