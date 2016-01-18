@@ -31,10 +31,11 @@ int main () {
 	list.printData();
 
 	//The given/input node to remove
-	Node* deleteNode = new Node(3);	//Why can't Node* deleteNode(3)?
+	Node* deleteNode = new Node(3);	//How to declare without new?
 
 	//Remove from middle
 	list.deleteMiddle(deleteNode);
+	delete deleteNode;
 
 	//Result
 	cout << "Final:" << endl;

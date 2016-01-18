@@ -59,6 +59,7 @@ void List::deleteMiddle(Node* toDelete) {
 			Node* temp = itr->next;
 			itr->data = temp->data;
 			itr->next = temp->next;
+			delete temp;
 		} else {
 			itr = itr->next;
 		}
