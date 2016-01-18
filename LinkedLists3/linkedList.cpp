@@ -30,11 +30,12 @@ void List::push_back(int data) {
 		while(itr != NULL) { //While there are still nodes
 			if (itr->next == NULL) {
 				itr->next = newNode;
-				break; //Why do I need this, is else statement's itr=itr->next not working?
+				//std::cout << "Added to " << itr->data << "'s next\n";
+				break;
 			}
 			else {
-				std::cout << "Going to next: " << itr->next->data << "\n";
-				itr = itr->next; //Increment itr to next node
+				//std::cout << "\tGoing from: " << itr->data << "->" << itr->next->data << "\n";
+				itr = itr->next;
 			}
 		}
 	}
@@ -44,7 +45,6 @@ void List::deleteMiddle(Node*) {
 
 }
 
-/* printData(2) = returns 2nd element in list */
 void List::printData() {
 	Node* itr = head;
 	while (itr != NULL) {
