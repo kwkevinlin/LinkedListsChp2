@@ -16,7 +16,7 @@ int main () {
 	 * 			 now link to the current node, which now consists of data from the next node,
 	 * 			 implicitly removing the current node.
 	 *
-	 * Complexity:
+	 * Complexity: O(n) for iterating through the list to find the input node.
 	 *
 	 */
 
@@ -26,7 +26,18 @@ int main () {
 	list.push_back(3);
 	list.push_back(4);
 
-	cout << "PrintData" << endl;
+	//Print Data
+	cout << "Initial:\n";
+	list.printData();
+
+	//The given/input node to remove
+	Node* deleteNode = new Node(3);	//Why can't Node* deleteNode(3)?
+
+	//Remove from middle
+	list.deleteMiddle(deleteNode);
+
+	//Result
+	cout << "Final:" << endl;
 	list.printData();
 
 }

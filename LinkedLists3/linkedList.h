@@ -1,6 +1,6 @@
 /*
- * Node and List class interface defined together in linkedList.h for simplicity.
- * Non-templated (explicit type)
+ * Node and List class interface defined together in linkedList.h.
+ * List is non-templated (explicit type)
  */
 
 #ifndef LINKEDLIST_H_

@@ -1,5 +1,5 @@
 /*
- * Node and List class defined together in linkedList.cpp for simplicity.
+ * Node and List class defined together in linkedList.cpp.
  */
 
 #include <stdlib.h>
@@ -32,6 +32,15 @@ void List::push_back(int data) {
 				itr->next = newNode;
 				//std::cout << "Added to " << itr->data << "'s next\n";
 				break;
+				/*
+				 * Note to self:
+				 * A break is required here because: 1. At the last element (above if statement),
+				 * we set itr->next = newNode. 2. Now since itr->next = newNode, next while loop
+				 * will return itr != NULL, and go to else (since itr->next is NOT null, but is newNode
+				 * instead). So we loop back to the first if statement as newNode. Now, itr->next = newNode,
+				 * forming a loop with itself. Thus, all future loops (infinite) will all go to the else
+				 * statement, since itr->next is always NOT null (since itr->next is itself, not a null).
+				 */
 			}
 			else {
 				//std::cout << "\tGoing from: " << itr->data << "->" << itr->next->data << "\n";
@@ -41,8 +50,19 @@ void List::push_back(int data) {
 	}
 }
 
-void List::deleteMiddle(Node*) {
-
+/* Finds given node in list, then replace current values (data, next) with next node's. */
+void List::deleteMiddle(Node* toDelete) {
+	Node* itr = head;
+	while (itr != NULL) {
+		if (itr->data == toDelete->data && itr->next != NULL) { //Second condition prevents accessing out-of-bound
+			std::cout << "Found node: " << itr->data << "\n";
+			Node* temp = itr->next;
+			itr->data = temp->data;
+			itr->next = temp->next;
+		} else {
+			itr = itr->next;
+		}
+	}
 }
 
 void List::printData() {
