@@ -27,6 +27,7 @@ int main () {
 	 */
 
 	List list1;
+	list1.push_back(8);
 	list1.push_back(7);
 	list1.push_back(1);
 	list1.push_back(6);
@@ -59,24 +60,28 @@ List listAddition(List list1, List list2) {
 	while(itr1 != NULL || itr2 != NULL) {
 		if (itr1 != NULL && itr2 != NULL) {
 			addition = itr1->data + itr2->data + carry;
-			cout << "Addition: " << addition << "\n";
+			//cout << "Addition: " << addition << "\n";
 			if (addition >= 10) {
 				carry = addition / 10;
 				addition = addition % 10;
 			} else {
 				carry = 0; //reset carry
 			}
-			cout << "Addition: " << addition << ", Carry:" << carry << "\n";
+			//cout << "Addition: " << addition << ", Carry:" << carry << "\n";
+			cout << addition << " ";
+			itr1 = itr1->next;
+			itr2 = itr2->next;
 		}
 		else if (itr1 != NULL && itr2 == NULL) {
-
+			addition = itr1->data;
+			cout << addition << " ";
+			itr1 = itr1->next;
 		}
 		else if (itr1 == NULL && itr2 != NULL) {
-
+			addition = itr2->data;
+			cout << addition << " ";
+			itr2 = itr2->next;
 		}
-
-		itr1 = itr1->next;
-		itr2 = itr2->next;
 	}
 	cout << "\n";
 }
