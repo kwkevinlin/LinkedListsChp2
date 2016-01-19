@@ -27,7 +27,7 @@ int main () {
 	 */
 
 	List list1;
-	list1.push_back(8);
+	//list1.push_back(8);
 	list1.push_back(7);
 	list1.push_back(1);
 	list1.push_back(6);
@@ -37,23 +37,23 @@ int main () {
 	list2.push_back(9);
 	list2.push_back(2);
 
+	//Print Data
+	cout << "Input:\n";
+	list1.printData();
+	list2.printData();
+
 	//List Addition
 	List result;
 	result = listAddition(list1, list2);
 
-	//Print Data
-	cout << "Initial:\n";
-	list1.printData();
-	list2.printData();
-
-//	//Result
-//	cout << "Final:" << endl;
-//	list.printData();
+	//Result
+	cout << "Output:" << endl;
+	result.printData();
 
 }
 
 List listAddition(List list1, List list2) {
-	int addition = 0, carry = 0;
+	int addition, carry = 0;
 	List result;
 	Node* itr1 = list1.getHead();
 	Node* itr2 = list2.getHead();
@@ -68,20 +68,24 @@ List listAddition(List list1, List list2) {
 				carry = 0; //reset carry
 			}
 			//cout << "Addition: " << addition << ", Carry:" << carry << "\n";
-			cout << addition << " ";
+			//cout << addition << " ";
+			result.push_back(addition);
 			itr1 = itr1->next;
 			itr2 = itr2->next;
 		}
 		else if (itr1 != NULL && itr2 == NULL) {
 			addition = itr1->data;
-			cout << addition << " ";
+			//cout << addition << " ";
+			result.push_back(addition);
 			itr1 = itr1->next;
 		}
 		else if (itr1 == NULL && itr2 != NULL) {
 			addition = itr2->data;
-			cout << addition << " ";
+			//cout << addition << " ";
+			result.push_back(addition);
 			itr2 = itr2->next;
 		}
 	}
 	cout << "\n";
+	return result;
 }
