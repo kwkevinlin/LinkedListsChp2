@@ -19,6 +19,7 @@ class List {
 
 	public:
 		List();
+		~List();
 		Node* getHead() {return head;};
 		void push_back(int);
 		void deleteMiddle(Node*);

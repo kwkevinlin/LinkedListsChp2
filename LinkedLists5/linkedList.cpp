@@ -20,6 +20,11 @@ List::List() {
 	head = NULL;
 }
 
+List::~List() {
+	//delete nodes by iterating
+	//destructor auto called when out of scope
+}
+
 void List::push_back(int data) {
 	Node* newNode = new Node(data);
 
